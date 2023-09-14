@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:gravity="center" android:orientation="vertical" android:background="@drawable/background_dialogs" android:padding="16dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <ImageView android:layout_width="@dimen/alert_dialog_image_size" android:layout_height="@dimen/alert_dialog_image_size" android:src="@drawable/confirm_ads"/>
+    <TextView android:textSize="21sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:layout_marginBottom="11dp" android:text="@string/ads_massage"/>
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:id="@+id/ok_button" android:layout_width="120dp" android:layout_height="52dp" android:src="@drawable/confirm_yes"/>
+        <Space android:layout_width="30dp" android:layout_height="wrap_content"/>
+        <ImageView android:id="@+id/no_button" android:layout_width="120dp" android:layout_height="52dp" android:src="@drawable/confirm_no"/>
+    </LinearLayout>
+</LinearLayout>

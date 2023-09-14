@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <RelativeLayout android:background="@drawable/background_skin_item" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="4dp" android:layout_marginTop="8dp" android:layout_marginRight="4dp" android:layout_centerHorizontal="true">
+        <TextView android:textSize="14sp" android:textColor="@color/primaryTextColor" android:gravity="center_horizontal" android:id="@+id/skin_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginTop="8dp" android:layout_marginRight="8dp"/>
+        <ImageView android:id="@+id/skinImage" android:layout_width="match_parent" android:layout_height="145dp" android:layout_margin="12dp" android:layout_below="@+id/skin_name"/>
+        <RelativeLayout android:id="@+id/bottom_background" android:background="@color/skin_item_bottom_container" android:paddingLeft="4dp" android:paddingRight="4dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_margin="1dp" android:layout_below="@+id/skinImage">
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+                <RelativeLayout android:gravity="center_horizontal" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+                    <ImageView android:id="@+id/views_icon" android:layout_width="25dp" android:layout_height="14dp" android:src="@drawable/item_view" android:layout_centerVertical="true"/>
+                    <TextView android:textSize="11sp" android:textColor="@color/skins_item_bottom_text_color" android:id="@+id/views_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_toRightOf="@+id/views_icon" android:layout_centerVertical="true"/>
+                </RelativeLayout>
+                <RelativeLayout android:gravity="center_horizontal" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+                    <ImageView android:id="@+id/downloads_icon" android:layout_width="18dp" android:layout_height="15dp" android:src="@drawable/item_download" android:layout_centerVertical="true"/>
+                    <TextView android:textSize="11sp" android:textColor="@color/skins_item_bottom_text_color" android:id="@+id/downloads_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_toRightOf="@+id/downloads_icon" android:layout_centerVertical="true"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

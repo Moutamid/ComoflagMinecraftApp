@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/v2_favourite" android:id="@+id/action_favorite" android:title="@string/favourite"/>
+    <item android:icon="@drawable/v2_rate" android:id="@+id/action_rate" android:title="@string/rate_app"/>
+    <item android:icon="@drawable/v2_favourite" android:id="@+id/share_app" android:title="@string/share_app"/>
+    <item
+        android:id="@+id/moreskins"
+        android:icon="@drawable/v2_favourite"
+        android:title="@string/more_app"
+        android:visible="false" />
+    <item android:icon="@drawable/v2_favourite" android:id="@+id/removeads" android:title="@string/remove_ads"/>
+    <item android:icon="@drawable/v2_policy" android:id="@+id/action_policy" android:title="@string/privacy_polity"/>
+</menu>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "270608593261",
+    "project_id": "minecraftsskins-db0de",
+    "storage_bucket": "minecraftsskins-db0de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270608593261:android:ef9db2874ae60899966a64",
+        "android_client_info": {
+          "package_name": "com.girlsskinsminecraft.boyskinsminecraft"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6zNNH_AFXFiB_ziUU0T4ELcFuTvCcCwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
