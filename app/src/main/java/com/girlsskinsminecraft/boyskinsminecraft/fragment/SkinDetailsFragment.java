@@ -88,7 +88,6 @@ public class SkinDetailsFragment extends BaseFragment {
         nativeAdView.setLayoutParams(new
                 ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp2px(getContext(), 300)));
 
-        loadInterAd();
 
         nativeAdView = view.findViewById(R.id.yodo1_mas_native);
         nativeAdView.loadAd();
@@ -134,8 +133,9 @@ public class SkinDetailsFragment extends BaseFragment {
                     SharedPreferences sharedPreferences = getContext().getSharedPreferences("MySharedPref", MODE_PRIVATE);
                     boolean isVIp = sharedPreferences.getBoolean("VIP", false);
                     if (!isVIp) {
-                        loadInterAd();
-//                        ((MainActivity) getActivity()).showVideoAd();
+
+                        ((MainActivity) getActivity()).showInterAd();
+                        ((MainActivity) getActivity()).loadInterAd();
 //                        ((MainActivity) getActivity()).loadRewardedVideoAd();
                     }
                 }
@@ -393,47 +393,6 @@ public class SkinDetailsFragment extends BaseFragment {
 
     }
 
-    public void loadInterAd() {
-        Yodo1MasInterstitialAd.getInstance().setAdListener(new Yodo1MasInterstitialAdListener() {
 
-            @Override
-            public void onInterstitialAdLoaded(Yodo1MasInterstitialAd ad) {
-
-
-            }
-
-            @Override
-            public void onInterstitialAdFailedToLoad(Yodo1MasInterstitialAd ad, @NonNull Yodo1MasError error) {
-
-                ad.loadAd(((MainActivity) getActivity()));
-            }
-
-            @Override
-            public void onInterstitialAdOpened(Yodo1MasInterstitialAd ad) {
-
-            }
-
-            @Override
-            public void onInterstitialAdFailedToOpen(Yodo1MasInterstitialAd ad, @NonNull Yodo1MasError error) {
-                ad.loadAd(((MainActivity) getActivity()));
-            }
-
-            @Override
-            public void onInterstitialAdClosed(Yodo1MasInterstitialAd ad) {
-                ad.loadAd(((MainActivity) getActivity()));
-            }
-        });
-
-
-
-    }
-    public void showInterAd() {
-        boolean isLoaded = Yodo1MasInterstitialAd.getInstance().isLoaded();
-        if(isLoaded) {
-            Yodo1MasInterstitialAd.getInstance().showAd(getActivity(), "Your Placement");
-            loadInterAd();
-        }
-
-    }
 
 }

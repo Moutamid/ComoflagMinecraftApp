@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.Window;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +35,8 @@ import com.yodo1.mas.appopenad.Yodo1MasAppOpenAdListener;
 import com.yodo1.mas.banner.Yodo1MasBannerAdListener;
 import com.yodo1.mas.banner.Yodo1MasBannerAdView;
 import com.yodo1.mas.error.Yodo1MasError;
+import com.yodo1.mas.interstitial.Yodo1MasInterstitialAd;
+import com.yodo1.mas.interstitial.Yodo1MasInterstitialAdListener;
 import com.yodo1.mas.reward.Yodo1MasRewardAd;
 import com.yodo1.mas.reward.Yodo1MasRewardAdListener;
 
@@ -83,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements IMainManager {
         super.onCreate(bundle);
         setContentView(R.layout.activity_main);
 
-
+        loadInterAd();
 
 //         inAppUpdateManager = InAppUpdateManager.Builder(this, REQ_CODE_VERSION_UPDATE)
 //                .resumeUpdates(true) // Resume the update, if the update was stalled. Default is true
@@ -494,5 +497,48 @@ public class MainActivity extends AppCompatActivity implements IMainManager {
 //    }
 
 
+
+    public void loadInterAd() {
+        Yodo1MasInterstitialAd.getInstance().setAdListener(new Yodo1MasInterstitialAdListener() {
+
+            @Override
+            public void onInterstitialAdLoaded(Yodo1MasInterstitialAd ad) {
+
+
+
+            }
+
+            @Override
+            public void onInterstitialAdFailedToLoad(Yodo1MasInterstitialAd ad, @NonNull Yodo1MasError error) {
+
+                ad.loadAd(MainActivity.this);
+            }
+
+            @Override
+            public void onInterstitialAdOpened(Yodo1MasInterstitialAd ad) {
+
+            }
+
+            @Override
+            public void onInterstitialAdFailedToOpen(Yodo1MasInterstitialAd ad, @NonNull Yodo1MasError error) {
+
+            }
+
+            @Override
+            public void onInterstitialAdClosed(Yodo1MasInterstitialAd ad) {
+
+            }
+        });
+
+
+
+    }
+    public void showInterAd() {
+        boolean isLoaded = Yodo1MasInterstitialAd.getInstance().isLoaded();
+        if(isLoaded) {
+            Yodo1MasInterstitialAd.getInstance().showAd(MainActivity.this, "Your Placement");
+        }
+
+    }
 
 }
