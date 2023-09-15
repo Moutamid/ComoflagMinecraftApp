@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.SearchView;
@@ -57,6 +58,7 @@ public class SkinsFragment extends BaseFragment {
     private final ArrayList<Skin> allSkinsList = new ArrayList<>();
     private final ArrayList<Skin> filteredSkinsList = new ArrayList<>();
     private boolean unsort = true;
+    private ImageView vipImg;
     int total_items;
     private SkinsAdapter.OnItemSelected mOnItemSelected = new SkinsAdapter.OnItemSelected() { 
         @Override 
@@ -88,6 +90,7 @@ public class SkinsFragment extends BaseFragment {
         SharedPreferences sharedPreferences = getContext().getSharedPreferences("MySharedPref",MODE_PRIVATE);
          total_items= Integer.parseInt(sharedPreferences.getString("total","43130"));
         tvtotal=mView.findViewById(R.id.total_name);
+        vipImg=mView.findViewById(R.id.img_vip);
         tvtotal.setText(String.valueOf(total_items)+ " Skins");
         NavigationView navigationView = (NavigationView) this.mView.findViewById(R.id.nav_view);
         navigationView.setItemIconTintList(null);
@@ -112,6 +115,12 @@ public class SkinsFragment extends BaseFragment {
             @Override
             public final void onClick(View view) {
                 SkinsFragment.this.setupSearchfun(view);
+            }
+        });
+        vipImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), SubscriptionActivity.class));
             }
         });
         initMode();
